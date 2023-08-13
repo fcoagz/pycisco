@@ -14,7 +14,14 @@ models = [falcon_7b, falcon_40b, llama_13b, gpt_35_turbo]
 class Api(object):
     @classmethod
     def get_message(self, Ai: str, model: str, message: str):
-        sentiment_message = self.receiver_comprehension(message)
+        
+        while True:
+            try:
+                sentiment_message = self.receiver_comprehension(message)
+                break
+            except LookupError:
+                import nltk
+                nltk.download('vader_lexicon')
         
         provider = Aichat if Ai == 'Aichat' else DeepAi if Ai == 'DeepAi' else GetGpt if Ai == 'GetGpt' else H2o if Ai == 'H2o' else opchatgpts
         response = ChatCompletion.create(
