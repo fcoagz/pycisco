@@ -1,7 +1,7 @@
 import json
 
 class Config(object):
-    token = '6634355551:AAEPLtWvLhBVQlWfIeLohOZeNu-mdnPAEqI'
+    token = ''
 
     @classmethod
     def see_users(self):
