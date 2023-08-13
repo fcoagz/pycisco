@@ -1,0 +1,5 @@
+Flask==2.3.2
+g4f==0.0.1.4
+Js2Py==0.74
+pyTelegramBotAPI==4.12.0
+ratelimiter==1.2.0
